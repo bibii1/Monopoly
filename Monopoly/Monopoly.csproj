@@ -35,6 +35,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="ActionCase.cs" />
+    <Compile Include="Board.cs" />
+    <Compile Include="CityCase.cs" />
+    <Compile Include="GameView.cs" />
+    <Compile Include="GameController.cs" />
+    <Compile Include="Dice.cs" />
+    <Compile Include="Case.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
