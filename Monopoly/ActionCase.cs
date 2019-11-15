@@ -1,10 +1,15 @@
 ﻿using System;
 namespace Monopoly
 {
-    public class ActionCase
+    public class ActionCase : Case
     {
-        public ActionCase()
+        string action;
+
+        public ActionCase(string name, string action): base(name)
         {
+            this.action = action;
         }
+
+        public string Action { get => action; set => action = value; }
     }
 }

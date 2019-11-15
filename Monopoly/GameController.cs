@@ -15,13 +15,12 @@ namespace Monopoly
         public void StartGame()
         {
             List<string> numbers = new List<string>();
-            numbers.Add("1");
             numbers.Add("2");
             numbers.Add("3");
             numbers.Add("4");
             Console.WriteLine("How many player will play today ?");
             int choix = 0;
-            DeplacementFleches(choix, numbers, "How many player will play today ?");
+            choix = DeplacementFleches(choix, numbers, "How many player will play today ?")+1;
             for (int i = 0; i < choix; i++)
             {
                 Console.WriteLine("Enter player " + i + " name.");
@@ -29,6 +28,7 @@ namespace Monopoly
             }
             Console.WriteLine("Now it's time to play !");
             System.Threading.Thread.Sleep(2000);
+            myBoard.State = "It's " + myBoard.Players[0].Name + "'s turn."; 
             playTurn();
         }
 
@@ -43,6 +43,8 @@ namespace Monopoly
         {
             if(!GameIsOver())
             {
+                Console.Clear();
+                myBoard.MyView.showState();
                 MovePLayer(myBoard.Players[myBoard.ActivePlayer]);
                 LandOn(myBoard.Players[myBoard.ActivePlayer]);
             }
@@ -51,8 +53,23 @@ namespace Monopoly
         public void MovePLayer(Player activePlayer)
         {
             myBoard.Dices[0].RollDice();
+            System.Threading.Thread.Sleep(10);
             myBoard.Dices[1].RollDice();
-            activePlayer.Position += myBoard.Dices[0].Value + myBoard.Dices[0].Value;
+            if (myBoard.Dices[0].Value == myBoard.Dices[1].Value)
+            {
+                activePlayer.RolledADouble = true;
+                activePlayer.Doubles++;
+                Console.WriteLine("It's a double !");
+                if (activePlayer.Doubles == 3)
+                {
+                    Console.WriteLine("3 consecutives doubles. Go to prison");
+                    activePlayer.IsLocked = true;
+                    activePlayer.Position = 10;
+                    NextAction();
+                }
+            }
+            Console.WriteLine(activePlayer.Name + " rolled on a " + (myBoard.Dices[0].Value + myBoard.Dices[1].Value));
+            activePlayer.Position += myBoard.Dices[0].Value + myBoard.Dices[1].Value;
             if (activePlayer.Position > 39)
                 activePlayer.Position -= 39;
         }
@@ -77,16 +94,19 @@ namespace Monopoly
             int choix = 0;
             if(activeCase.Owner == null)
             {
-                Console.WriteLine("This property haven't been bought yet. Do you want to buy it ?");
-                DeplacementFleches(choix, answers, "This property haven't been bought yet. Do you want to buy it ?");
+                Console.WriteLine("You landed on "+activeCase.Name+", do you want to buy it ?"
+                                   + "\nYour balance is " + activePlayer.Balance + ". Price is " + activeCase.PurchasePrice);
+                choix = DeplacementFleches(choix, answers, ("You landed on " + activeCase.Name + ", do you want to buy it ?"
+                                   + "\nYour balance is " + activePlayer.Balance + ". Price is " + activeCase.PurchasePrice));
                 switch(choix)
                 {
                     case 1:
-                        if(activePlayer.Balance>=activeCase.PurchasePrice)
+                        if(activePlayer.Balance >= activeCase.PurchasePrice)
                         {
                             activeCase.Owner = activePlayer;
                             activePlayer.BuyCase(activeCase);
-                            Console.WriteLine("Congratulation, you're the new owner of " + activeCase.Name);
+                            Console.WriteLine("Congratulations, you're the new owner of " + activeCase.Name);
+                            Console.WriteLine("Your new balance is " + activePlayer.Balance);
                             System.Threading.Thread.Sleep(2000);
                             Console.Clear();
                             NextAction();
@@ -128,7 +148,8 @@ namespace Monopoly
 
         public void LandOnAction(Player activePlayer,ActionCase activeCase)
         {
-
+            Console.WriteLine("You landed on " + activeCase.Name);
+            NextAction();
         }
 
         public void NextAction()
@@ -138,9 +159,21 @@ namespace Monopoly
             actions.Add("Show all player state");
             actions.Add("End turn");
             int choix = 0;
-            Console.WriteLine("What do you want to do ?");
-            DeplacementFleches(choix, actions, "What do you want to do ?");
-            switch(choix)
+            if (myBoard.Players[myBoard.ActivePlayer].IsLocked)
+            {
+                myBoard.Players[myBoard.ActivePlayer].Doubles = 0;
+                myBoard.ActivePlayer++;
+                if (myBoard.ActivePlayer > myBoard.Players.Count)
+                    myBoard.ActivePlayer = 0;
+                myBoard.State = "It's " + myBoard.Players[myBoard.ActivePlayer].Name + "'s turn.";
+                playTurn();
+            }
+            else
+            {
+                Console.WriteLine("What do you want to do ?");
+                choix = DeplacementFleches(choix, actions, "What do you want to do ?");
+            }
+            switch (choix)
             {
                 case 1:
                     break;
@@ -149,7 +182,17 @@ namespace Monopoly
                     break;
 
                 case 3:
-                    myBoard.ActivePlayer++;
+                    if (myBoard.Players[myBoard.ActivePlayer].RolledADouble)
+                    {
+                        myBoard.Players[myBoard.ActivePlayer].RolledADouble = false;
+                    }
+                    else
+                    {
+                        myBoard.ActivePlayer++;
+                    }
+                    if (myBoard.ActivePlayer > myBoard.Players.Count)
+                        myBoard.ActivePlayer = 0;
+                    myBoard.State = "It's " + myBoard.Players[myBoard.ActivePlayer].Name + "'s turn.";
                     playTurn();
                     break;
             }

@@ -6,7 +6,9 @@ namespace Monopoly
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Board monopoly = new Board("monopoly2.csv");
+            monopoly.MyController.StartGame();
         }
+
     }
 }

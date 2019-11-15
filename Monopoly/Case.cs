@@ -1,10 +1,15 @@
 ﻿using System;
 namespace Monopoly
 {
-    public class Case
+    public abstract class Case
     {
-        public Case()
+        string name;
+
+        protected Case(string name)
         {
+            this.name = name;
         }
+
+        public string Name { get => name; set => name = value; }
     }
 }
