@@ -4,9 +4,20 @@ using System.Collections.Generic;
 
 namespace Monopoly
 {
-    public class Board
+    public interface PlayerObserver
     {
+        void Update();
+    }
 
+    public interface Subject
+    {
+        void Attach(PlayerObserver observer);
+        void Detach(PlayerObserver observer);
+        void Notify(PlayerObserver observer);
+    }
+
+    class Board : Subject
+    {
         Case[] gameBoard;
         List<Player> players;
         Dice[] dices;
@@ -14,6 +25,7 @@ namespace Monopoly
         string state;
         GameView myView;
         GameController myController;
+        List<PlayerObserver> observers = new List<PlayerObserver>();
 
 
         public Board(string filename)
@@ -37,7 +49,10 @@ namespace Monopoly
                 }
                 else
                 {
-                    gameBoard[i] = new ActionCase(stock2[0], stock2[2]);
+                    if (!stock2[0].Equals("Parc Gratuit"))
+                        gameBoard[i] = new ActionCase(stock2[0], stock2[2]);
+                    else
+                        gameBoard[i] = new FreeParking(stock2[0], stock2[2]);
                 }
             }
             this.dices = new Dice[2];
@@ -57,5 +72,21 @@ namespace Monopoly
         public string State { get => state; set => state = value; }
         public GameView MyView { get => myView; set => myView = value; }
         public GameController MyController { get => myController; set => myController = value; }
+        public List<PlayerObserver> Observers { get => observers; set => observers = value; }
+
+        public void Attach(PlayerObserver observer)
+        {
+            observers.Add(observer);
+        }
+
+        public void Detach(PlayerObserver observer)
+        {
+            observers.Remove(observer);
+        }
+
+        public void Notify(PlayerObserver observer)
+        {
+            observer.Update();
+        }
     }
 }

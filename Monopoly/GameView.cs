@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Monopoly
 {
-    public class GameView
+    class GameView
     {
         private Board myBoard;
         public GameView(Board myBoard)
