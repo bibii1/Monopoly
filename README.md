@@ -32,22 +32,21 @@ Thus, for example, a CityCase instance which has much more attributes than an Ac
 
 ## WHAT DOES IT LOOK LIKE
 
-    # UNITY
+# UNITY
         
-        To make it more pleasant to play. We implemented this code in Unity. This is what starting the game looks like :
+To make it more pleasant to play. We implemented this code in Unity. This is what starting the game looks like :
 
-        ![starting the game in unity](startingthegame.gif)
+![starting the game in unity](startingthegame.gif)
 
-
-        When a player lands on another player's proprety, the cash is immediately withdrawn :
-
-
-        And when someone lands on Parc Gratuit, he gets all of the accumulated money from taxes.
-
-        ![parc gratuit](pargratuit.gif)
+When a player lands on another player's proprety, the cash is immediately withdrawn :
 
 
-    ## Let's try the real game now ;)
+And when someone lands on Parc Gratuit, he gets all of the accumulated money from taxes.
+
+![parc gratuit](pargratuit.gif)
+
+
+## Let's try the real game now ;)
 
 
 
