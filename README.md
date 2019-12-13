@@ -37,13 +37,13 @@ Thus, for example, a CityCase instance which has much more attributes than an Ac
 
 ### UNITY
         
-To make it more pleasant (and also more understandable!) to play, we implemented this code in Unity. This is what starting the game looks like :
+To make it more pleasant (and also more understandable!) to play, we implemented this code in Unity. This is how starting the game looks like :
 
 ![starting the game in unity](startingthegame.gif)
 
 
 When a player lands on another player's proprety, the cash is immediately withdrawn.
-On the other hand, when a player's balance is too low, the game informs him that he cannot buy the property, whereas if he lands on his own property, the game will simply tell him this is his' just in case.
+On the other hand, when a player's balance is too low, the game informs him that he cannot buy the property, whereas if he lands on his own property, the game will simply tell him this is his', just in case.
 
 ![cash too low, landing on someonelse](actions.gif)
 
