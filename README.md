@@ -22,7 +22,7 @@ To be updated whenever there is a change in a player’s balance, we used anothe
 
 * ### Observer
 
-The Subject will affect the interface PlayerObserver whenever there is any change in the user’s balance. Thus, in the Player class that inherits from the PlayerObserver interface, we can see that the Update method will write the new balance after notification, made by the subject. This simplifies the event management, when one class triggers the execution of the balance change.
+The Subject will affect the interface PlayerObserver whenever there is any change in the user’s balance. Thus, in the Player class that inherits from the PlayerObserver interface, we can see that the Update method will write the new balance after notification, made by the subject. This simplifies the event management, when one class triggers the execution of the balance change. Here we can see the balance updates after a player chooses to buy a property :
 
 ![observer notification in Player class](notificationobserver.gif)
 
@@ -30,7 +30,6 @@ The Subject will affect the interface PlayerObserver whenever there is any chang
 
 Finally, for more readable project we used the Factory method design pattern for the different cases in the game. The ActionCase and CityCase classes directly inherits from the Case abstract class.  This allowed the construction of classes such as the two derived Case classes, with a component of a type that has not been predetermined, but only defined by a name. The case can be City or Action but no concrete type of Case has been decided firstly.
 Thus, for example, a CityCase instance which has much more attributes than an ActionCase one, could be treated in a certain way when called in LandOnAction method for example.
-
 
 
 
