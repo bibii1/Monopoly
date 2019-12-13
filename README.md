@@ -38,12 +38,15 @@ To make it more pleasant to play. We implemented this code in Unity. This is wha
 
 ![starting the game in unity](startingthegame.gif)
 
-When a player lands on another player's proprety, the cash is immediately withdrawn :
+When a player lands on another player's proprety, the cash is immediately withdrawn.
+On the other hand, when a player's balance is too low, th game informs him that he cannot buy the property, whereas if he lands on his own property, the game will simply tell him just in case.
+
+![cash too low, landing on someonelse](actions.gif)
 
 
 And when someone lands on Parc Gratuit, he gets all of the accumulated money from taxes.
 
-![parc gratuit](pargratuit.gif)
+![parc gratuit](parcgratuit.gif)
 
 
 ## Let's try the real game now ;)
