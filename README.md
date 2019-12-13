@@ -3,6 +3,8 @@ Leeroy BITBOL
 Ariane HUCKEL
 IBO1
 
+
+
 # MONOPOLY GAME
 
 The project's goal was to produce a simplified version of the Monopoly game.
@@ -28,6 +30,8 @@ The Subject will affect the interface PlayerObserver whenever there is any chang
 
 Finally, for more readable project we used the Factory method design pattern for the different cases in the game. The ActionCase and CityCase classes directly inherits from the Case abstract class.  This allowed the construction of classes such as the two derived Case classes, with a component of a type that has not been predetermined, but only defined by a name. The case can be City or Action but no concrete type of Case has been decided firstly.
 Thus, for example, a CityCase instance which has much more attributes than an ActionCase one, could be treated in a certain way when called in LandOnAction method for example.
+
+
 
 
 ## WHAT DOES IT LOOK LIKE
