@@ -55,6 +55,10 @@ And when someone lands on Parc Gratuit, he gets all of the accumulated money fro
 
 ## Let's try the real game now ;)
 
+Linux Build : https://github.com/bibii1/Monopoly/tree/master/Linux%20Monopoly%20Unity
+
+Mac Os build : https://github.com/bibii1/Monopoly/blob/master/Monopoly%20Mac%20Os%20Unity.app.zip
+
 
 
 
