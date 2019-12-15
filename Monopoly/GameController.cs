@@ -31,7 +31,7 @@ namespace Monopoly
                 myBoard.Attach(myBoard.Players[i]);
             }
             Console.WriteLine("Now it's time to play !");
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(1000);
             myBoard.State = "It's " + myBoard.Players[0].Name + "'s turn.";
             playTurn();
         }
