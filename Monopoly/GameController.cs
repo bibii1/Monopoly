@@ -14,7 +14,8 @@ namespace Monopoly
 
         public void StartGame()
         {
-            Console.WriteLine("ALl choices will be made with arrows from keyboard \n");
+            Console.WriteLine("\n\n ALl choices will be made with arrows from keyboard \n\n");
+            System.Threading.Thread.Sleep(2000);
             List<string> numbers = new List<string>();
             numbers.Add("2");
             numbers.Add("3");

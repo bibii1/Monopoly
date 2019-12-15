@@ -1,0 +1,41 @@
+Nom;Type;Couleur;Prix;Hypothèque;Loyer 0;Loyer 1;Loyer 2;Loyer 3;Loyer 4;Loyer 5
+Depart;Action;Recevez 400M;200;;;;;;;
+Boulevard de Belleville;Ville;Marron;60;30;2;10;30;90;160;250
+Chance;Action;Vous remportez 100M;;;;;;;;
+Rue Lecourbe;Ville;Marron;60;30;4;20;60;180;320;450
+Impots sur le revenu;Action;Payer 200M;200;;;;;;;
+Gare Montparnasse;Ville;Noir;200;100;25;50;100;200;0;0
+Rue de Vaugirard;Ville;Bleu clair;100;50;6;30;90;270;400;550
+Chance;Action;Payer 50M;;;;;;;;
+Rue de Courcelles;Ville;Bleu clair;100;50;6;30;90;270;400;550
+Avenue de la Republique;Ville;Bleu clair;120;60;8;40;100;300;450;600
+Prison;Action;Rien;;;;;;;;
+Boulevard de la Villette ;Ville;Rose;140;70;10;50;150;450;625;750
+Compagnie de distribution d’electricite;Ville;Blanc;150;75;0;0;0;0;0;0
+Avenue de Neuilly;Ville;Rose;140;70;10;50;150;450;625;750
+Rue de Paradis;Ville;Rose;160;80;12;60;180;500;700;900
+Gare de Lyon;Ville;Noir;200;100;25;50;100;200;0;0
+Avenue Mozart;Ville;Orange;180;90;14;70;200;550;750;950
+Chance;Action;Payer 100M;;;;;;;;
+Boulevard Saint-Michel;Ville;Orange;180;90;14;70;200;550;750;950
+Place Pigalle;Ville;Orange;200;100;16;80;220;600;800;1000
+Parc Gratuit;Action;Vous remportez le total des taxes accumulees;;;;;;;;
+Avenue de Matignon ;Ville;Rouge;220;110;18;90;250;700;875;1050
+Chance;Action;Vous remportez 70M;70;;;;;;;
+Boulevard Malesherbes ;Ville;Rouge;220;110;18;90;250;700;875;1050
+Avenue Henri-Martin;Ville;Rouge;240;120;20;100;300;750;925;1100
+Gare du Nord;Ville;Noir;200;100;25;50;100;200;0;0
+Faubourg Saint-Honore;Ville;Jaune;260;130;22;110;330;800;975;1150
+Place de la Bourse;Ville;Jaune;260;130;22;110;330;800;975;1150
+Compagnie de distribution des eaux;Ville;Blanc;150;75;0;0;0;0;0;0
+Rue de La Fayette;Ville;Jaune;280;140;24;120;160;850;1025;1200
+Allez en prison;Action;Allez en prison;;;;;;;;
+Avenue de Breteuil;Ville;Vert;300;150;26;130;390;900;1100;1275
+Avenue Foch;Ville;Vert;300;150;26;130;390;900;1100;1275
+Chance;Action;Payer 30M;30;;;;;;;
+Boulevard des Capucines;Ville;Vert;320;160;28;150;390;900;1200;1400
+Gare Saint-Lazare;Ville;Noir;200;100;25;50;100;200;0;0
+Chance;Action;Vous remportez 50M;50;;;;;;;
+Avenue des Champs-Elysees;Ville;Bleu fonce;350;175;35;175;500;1100;1300;1500
+Taxe de Luxe;Action;Payer 100M;100;;;;;;;
+Rue de La Paix;Ville;Bleu fonce;400;200;50;175;500;1100;1700;2000
